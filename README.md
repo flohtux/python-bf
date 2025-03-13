@@ -1,1 +1,3 @@
-# python-bf
+# Coding Dojo
+
+Ausführung mit `python brainfuck.py`.
