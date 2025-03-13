@@ -13,21 +13,24 @@ while True:
         code.append(char)
 file.close()
 
-for char in code:
-    match char:
-        case '+':
-            data[pointer]=data[pointer]+1
-        case '-':
-            data[pointer]=data[pointer]-1
-        case '>':
-            pointer+=1
-            if (pointer >= len(data)):
-                data.append(0)
-        case '>':
-            pointer-=1
-        case '.':
-            output += chr(data[pointer])
+def run_bf(listOfChars):
+    global code, data, pointer, output
+    for char in code:
+        match char:
+            case '+':
+                data[pointer]=data[pointer]+1
+            case '-':
+                data[pointer]=data[pointer]-1
+            case '>':
+                pointer+=1
+                if (pointer >= len(data)):
+                    data.append(0)
+            case '>':
+                pointer-=1
+            case '.':
+                output += chr(data[pointer])
 
+run_bf(code)
 print(data)
 print(pointer)
 print(output)
