@@ -9,7 +9,7 @@ while True:
     char = file.read(1)          
     if not char: 
         break
-    if char in ['+', '-', '.']:
+    if char in ['+', '-', '.', '>', '<']:
         code.append(char)
 file.close()
 
@@ -19,8 +19,15 @@ for char in code:
             data[pointer]=data[pointer]+1
         case '-':
             data[pointer]=data[pointer]-1
+        case '>':
+            pointer+=1
+            if (pointer >= len(data)):
+                data.append(0)
+        case '>':
+            pointer-=1
         case '.':
             output += chr(data[pointer])
 
-
+print(data)
+print(pointer)
 print(output)
